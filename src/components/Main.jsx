@@ -24,7 +24,7 @@ const Container = styled.div`
 const Texto = styled.div`
   display: flex;
   justify-content: center;
-  color:  #24305E;
+  color:   ${({ theme }) => theme.primary};
   background-color:  ${({ theme }) => theme.background};
   background-image: url("https://github.com/EmanuelAvgerino/marica-mais-emprego-/blob/main/img/Montagem_Ilustracao_Prefeitura-de-Marica-1.png?raw=true0");
   background-size: 100%;
