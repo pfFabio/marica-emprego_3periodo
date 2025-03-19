@@ -6,6 +6,7 @@ export const lightTheme = {
   buttonBackground: '#ddd',
   buttonText: '#000',
   formBG: '#f4f7fb',
+  img_text: '100%',
 };
   
 export const darkTheme = {
@@ -16,4 +17,5 @@ export const darkTheme = {
   buttonBackground: '#1C2B4A', 
   buttonText: '#FF4C4C',
   formBG: '#e0e0e0',
+  img_text: '80%',
 };
