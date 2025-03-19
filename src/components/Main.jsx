@@ -28,6 +28,7 @@ const Texto = styled.div`
   background-color:  ${({ theme }) => theme.background};
   background-image: url("https://github.com/EmanuelAvgerino/marica-mais-emprego-/blob/main/img/Montagem_Ilustracao_Prefeitura-de-Marica-1.png?raw=true0");
   background-size: 100%;
+  background-color: RGBA(0,0,0, ${({ theme }) => theme.img_text});
   padding-top: 3rem;
   padding-bottom: 3rem;
   text-align: left;
