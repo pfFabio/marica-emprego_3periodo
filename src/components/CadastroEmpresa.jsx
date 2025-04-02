@@ -1,19 +1,19 @@
 import styled from "styled-components"
 
-Body = styled.body`
+const Body = styled.body`
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   display: flex;
   height: 100vh;
 `
-Container = styled.div`
+const Container = styled.div`
   display: flex;
   width: 100%;
 `
 
 
-Content = styled.main`
+const Content = styled.main`
   display: flex;
   flex-grow: 1;
   background: #A8D0E6;
@@ -22,26 +22,26 @@ Content = styled.main`
   align-items: center;
 `
 
-Info = styled.section`
+const Info = styled.section`
   max-width: 40%;
   text-align: center;
   margin: 120px;
 `
 
-Illustration = styled.img`
+const Illustration = styled.img`
     width: 100%;
     max-width: 300px;
     border-radius: 50%;
 `
 
-Quote = styled.p`
+const Quote = styled.p`
   font-size: 30px;
   color: #24305E;
 `
 
 
 
-Form = styled.form`
+const Form = styled.form`
   display: flex;
   flex-direction: column;
   width: 25%;
@@ -49,7 +49,7 @@ Form = styled.form`
   margin: 120px;
 `
 
-Input = styled.input`
+const Input = styled.input`
   margin-bottom: 20px;
   padding: 10px;
   border: 1px solid #E9E9E9;
@@ -57,7 +57,7 @@ Input = styled.input`
   font-size: 16px;
 `
 
-Button = styled.button`
+const Button = styled.button`
 
   background: #F6F6F6;
   color: #F76C6C;
@@ -71,7 +71,7 @@ Button = styled.button`
   align-self: center;
 `
 
-P = styled.p`
+const P = styled.p`
   font-size: 30px;
   text-align: center;
   font-family: Arial, sans-serif;
@@ -81,7 +81,7 @@ P = styled.p`
 
 function CadastroEmpresa(){
   return(
-    <body>
+    <Body>
       <Container>
         <Content>
           <Info>
@@ -102,6 +102,8 @@ function CadastroEmpresa(){
           </Form>
         </Content>
       </Container>
-    </body>
+    </Body>
     )
 }
+
+export default CadastroEmpresa;
