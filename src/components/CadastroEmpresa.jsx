@@ -1,102 +1,107 @@
 import styled from "styled-components"
 
-
-const Formulario = styled.div`
-  display:flex;
-  justify-content: center;
-  background-color:  ${({ theme }) => theme.formBG};
-  padding-top: 2rem;
-  padding-bottom: 3rem;
+Body = styled.body`
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+`
+Container = styled.div`
+  display: flex;
+  width: 100%;
 `
 
-const Form = styled.form`
+
+Content = styled.main`
+  display: flex;
+  flex-grow: 1;
+  background: #A8D0E6;
+  padding: 40px;
+  justify-content: space-between;
+  align-items: center;
+`
+
+Info = styled.section`
+  max-width: 40%;
+  text-align: center;
+  margin: 120px;
+`
+
+Illustration = styled.img`
+    width: 100%;
+    max-width: 300px;
+    border-radius: 50%;
+`
+
+Quote = styled.p`
+  font-size: 30px;
+  color: #24305E;
+`
+
+
+
+Form = styled.form`
   display: flex;
   flex-direction: column;
   width: 25%;
-  color:  black;
-  font-family: "Epilogue";
-  @media(max-width: 768px){
-    width:100%
-  }
+  height: auto;
+  margin: 120px;
 `
 
-const Input = styled.input`
-  margin-top: 0;
-  height: 30px;
+Input = styled.input`
+  margin-bottom: 20px;
   padding: 10px;
-  border-radius: 15px;
-  border: 1px solid lightgray;
-  margin-bottom: 10px;
-  @media(max-width: 768px){
-    width:90%
-  }
+  border: 1px solid #E9E9E9;
+  border-radius: 20px;
+  font-size: 16px;
 `
 
-const UploadButton = styled.label`
-  display: inline-block;
-  background-color: ${({ theme }) => theme.uploadButtonBackground || "#f0f0f0"};
-  color: ${({ theme }) => theme.uploadButtonText || "#333"};
+Button = styled.button`
+
+  background: #F6F6F6;
+  color: #F76C6C;
+  border: none;
+  padding: 8px;
+  font-size: 14px;
   font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 15px;
-  border: 1px solid lightgray;
-  text-align: center;
+  border-radius: 20px;
   cursor: pointer;
-  margin-bottom: 10px;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.uploadButtonHover || "#d9d9d9"};
-  }
-
-  input {
-    display: none;
-  }
-`;
-
-
-const Submit = styled.input`
-  display: flex;
-  justify-content: center;
-  background-color:  ${({ theme }) => theme.buttonBackground};
-  color:  ${({ theme }) => theme.buttonText};
-  font-weight: bold;
-  border-radius: 15px;
-  margin-top: 20px;
-  height: 35px;
-  width: 70px;
-  border: 0;
-  &:hover{
-    cursor: pointer;
-  }
+  width: 100px;
+  align-self: center;
 `
 
+P = styled.p`
+  font-size: 30px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: #24305E;
+`
 
-function Cadastro(){
-
-
+function CadastroEmpresa(){
   return(
-    <>
-      <h2 id="cadastreSe">Cadastre-se</h2>  
-      <Formulario>
-        <Form autoComplete="off">
-            <label htmlFor="Nome" >Nome da empresa</label>
-            <Input type="text" id="empresa" name="empresa" required />
-            <label htmlFor="email" >E-mail</label>
-            <Input type="email" id="email" name="email" required />
-            <label htmlFor="telefone" >Telefone</label>
-            <Input type="tel" id="telefone" name="telefone" required />
-            <label htmlFor="local" >Endereço</label>
-            <Input type="text" id="endereco" name="endereco" required />
-            <label htmlFor="senha" >Senha</label>
-            <Input type="password" id="senha" name="senha" required />
-            <label htmlFor="senha" >Confirme sua senha</label>
-            <Input type="password" id="confSenha" name="confSenha" required />
-            <Submit type="submit" id="enviar" value="Enviar" />
-        </Form>
-      </Formulario>
-    </>
-  );
-};
-
-export default Cadastro
+    <body>
+      <Container>
+        <Content>
+          <Info>
+              <Illustration src="https://github.com/pfFabio/images/blob/main/Imagem_do_WhatsApp_de_2025-04-02_%C3%A0_s__11.17.51_2e1b4da6-removebg-preview.png?raw=true" alt="Enfermeira"/>
+              <Quote>
+                  "Esta é a sua oportunidade de dar o <b>próximo passo</b> na sua carreira!"
+              </Quote>
+          </Info>
+          <Form>
+              <P>Cadastre-se</P>
+              <Input type="text" placeholder="Nome do candidato"/>
+              <Input type="email" placeholder="E-mail"/>
+              <Input type="tel" placeholder="Telefone"/>
+              <Input type="text" placeholder="Endereço"/>
+              <Input type="password" placeholder="Senha"/>
+              <Input type="password" placeholder="Confirme sua senha"/>
+              <Button type="submit">Enviar</Button>
+          </Form>
+        </Content>
+      </Container>
+    </body>
+    )
+}
