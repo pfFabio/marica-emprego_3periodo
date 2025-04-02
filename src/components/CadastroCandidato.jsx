@@ -1,73 +1,87 @@
 import styled from "styled-components"
 
-
-const Formulario = styled.div`
-  display:flex;
+const Body = styled.body`
+  display: flex;
   justify-content: center;
-  background-color:  ${({ theme }) => theme.formBG};
-  padding-top: 2rem;
-  padding-bottom: 3rem;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: #BFD7EA;
 `
 
-const Form = styled.form`
+const Content = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+`
+
+const Info = styled.div`
+  text-align: center;
+  width: 50%;
+  padding: 20px;
+`
+
+const Img = styled.img`
+  max-width: 300px;
+  width: 100%;
+`
+
+const P = styled.p`
+  font-size: 22px;
+  color: #333;
+  margin-top: 15px;
+  font-weight: normal;
+`
+
+
+const TituloForm = styled.h2`
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 25px;
+  text-align: center;
+`
+
+const FormContainer = styled.div`
+  width: 35%;
   display: flex;
   flex-direction: column;
-  width: 25%;
-  color:  black;
-  font-family: "Epilogue";
-  @media(max-width: 768px){
-    width:100%
-  }
+  align-items: center;
+  padding-top: 5%;
+`
+
+const EmpresaForm = styled.form`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 100px;
 `
 
 const Input = styled.input`
-  margin-top: 0;
-  height: 30px;
-  padding: 10px;
-  border-radius: 15px;
-  border: 1px solid lightgray;
-  margin-bottom: 10px;
-  @media(max-width: 768px){
-    width:90%
-  }
+  width: 90%;
+  padding: 8px;
+  background-color: #F5F5F5;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  font-size: 16px;
 `
 
-const UploadButton = styled.label`
-  display: inline-block;
-  background-color: ${({ theme }) => theme.uploadButtonBackground || "#f0f0f0"};
-  color: ${({ theme }) => theme.uploadButtonText || "#333"};
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 15px;
-  border: 1px solid lightgray;
-  text-align: center;
-  cursor: pointer;
-  margin-bottom: 10px;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.uploadButtonHover || "#d9d9d9"};
-  }
-
-  input {
-    display: none;
-  }
-`;
-
-
-const Submit = styled.input`
-  display: flex;
-  justify-content: center;
-  background-color:  ${({ theme }) => theme.buttonBackground};
-  color:  ${({ theme }) => theme.buttonText};
-  font-weight: bold;
-  border-radius: 15px;
+const Button = styled.button`
+  width: 40%;
   margin-top: 20px;
-  height: 35px;
-  width: 70px;
-  border: 0;
+  padding: 12px;
+  background-color: #f8f5f5;
+  color: rgb(245, 23, 23);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
   &:hover{
-    cursor: pointer;
+    background-color: #D43F3F;
   }
 `
 
@@ -77,32 +91,30 @@ function Cadastro(){
 
   return(
     <>
-      <h2 id="cadastreSe">Cadastre-se</h2>  
-      <Formulario>
-        <Form autoComplete="off">
-            <label htmlFor="Nome" >Nome completo</label>
-            <Input type="text" id="usuario" name="usuario" required />
-            <label htmlFor="nascimento" >Data de nascimento</label>
-            <Input type="date" id="nascimento" name="nascimento" required />
-            <label htmlFor="endereco" >Endereço</label>
-            <Input type="text" id="endereco" name="endereco" required />
-            <label htmlFor="academico" >Curriculo academico</label>
-            <Input type="text" id="academico" name="academico" required />
-            <label htmlFor="exp" >Experiencias</label>
-            <Input type="text" id="exp" name="exp" required />
-            <label htmlFor="telefone" >Telefone</label>
-            <Input type="tel" id="telefone" name="telefone" required />
-            <label htmlFor="email" >E-mail</label>
-            <Input type="email" id="email" name="email" required />
-            <label htmlFor="senha" >Senha</label>
-            <Input type="password" id="senha" name="senha" required />
-            <label htmlFor="senha" >Confirme sua senha</label>
-            <Input type="password" id="confSenha" name="confSenha" required />
-            <Submit type="submit" id="enviar" value="Enviar" />
-        </Form>
-      </Formulario>
+      <Body>
+          <Content>
+              <Info>
+                  <Img src="https://github.com/pfFabio/images/blob/main/IMG-20250402-WA0065__1_-removebg-preview.png?raw=true" alt="Imagem professor"/>
+                  <P>“Encontramos o melhor candidato para <b>melhor vaga, para melhor empresa!”</b></P>
+              </Info>
+              <FormContainer>
+                <TituloForm>Cadastre-se</TituloForm>
+                <EmpresaForm>
+                  <Input type="text" id="nome" name="nome" placeholder="Nome da Empresa" required/>
+                  <Input type="email" id="email" name="email" placeholder="E-mail" required/>
+                  <Input type="tel" id="telefone" name="telefone" placeholder="Telefone" required/>
+                  <Input type="text" id="endereco" name="endereco" placeholder="Endereço" required/>
+                  <Input type="password" id="senha" name="senha" placeholder="Senha" required/>
+                  <Input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme sua Senha" required/>
+                  <Button type="submit"><b>Enviar</b></Button>
+                </EmpresaForm>
+              </FormContainer>
+        </Content>
+
+      </Body>
+
     </>
   );
 };
 
-export default Cadastro
+export default Cadastro;
