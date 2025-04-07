@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {Link} from "react-router-dom"
 import { useState } from "react";
 import {BiHome, BiSolidUserPlus, BiUserCircle, BiSolidSend } from "react-icons/bi";
+import { AiFillLeftCircle } from "react-icons/ai";
 
 
 const BotaoTema = styled.button`
@@ -85,9 +86,7 @@ const SetaMenu = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
-  height: 3rem;
-  width: 3rem;
+  font-size: 3rem;
   cursor: pointer;
   background: white;
   border: none;
@@ -96,16 +95,16 @@ const SetaMenu = styled.div`
   left: ${({ abriu }) => (abriu ? "2.8rem" : "9.5rem")}; 
   top: 8%; 
   border-radius: 50%;
-  transform: rotate(${({ abriu }) => (abriu ? "0" : "180")}deg);
+  transform: rotate(${({ abriu }) => (abriu ? "360" : "180")}deg);
   transition: 0.3s ease-in-out, transform 0.5s; 
  
   `
 
-  const BarraMenu = styled.div`
+const BarraMenu = styled.div`
   border-radius: 8px;
   height: 0.2rem;
   width: 90%;
-  background-color: yellow;
+  background-color: red;
   `
   
 const ItemMenu = styled.div`
@@ -153,7 +152,7 @@ function Header({toggleTheme, escuro}) {
       </BotaoTema>
 
       <SetaMenu abriu = {taAberto} onClick={abreMenu}> 
-        <BiSolidSend/> 
+        <AiFillLeftCircle/> 
       </SetaMenu>
 
       <Menu abriu = {taAberto} >
