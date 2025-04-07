@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import {Link} from "react-router-dom"
 import { useState } from "react";
-import {BiHome, BiSolidUserPlus, BiUserCircle, BiSolidSend } from "react-icons/bi";
-import { AiFillLeftCircle } from "react-icons/ai";
+import {BiHome, BiSolidUserPlus, BiUserCircle } from "react-icons/bi";
+import { AiFillLeftCircle, AiOutlineUser } from "react-icons/ai";
 
 
 const BotaoTema = styled.button`
@@ -13,7 +13,6 @@ const BotaoTema = styled.button`
   color: ${({ theme }) => theme.primary}; /* Cor do ícone */
   font-size: 1.5rem;
   cursor: pointer;
-
   transition: color 0.3s ease;
 
   &:hover {
@@ -25,6 +24,25 @@ const BotaoTema = styled.button`
   }
 `;
 
+const BotaoPerfil = styled.div`
+  position: absolute;
+  bottom: 7rem;
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+  font-size: 1.5rem;
+
+
+  &:hover {
+    background-color: #ffa500; 
+  }
+`
+
 const Cabeca = styled.header`
   position: fixed;
   left: 0;
@@ -33,7 +51,7 @@ const Cabeca = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${({ theme }) => theme.background};
+  background-color: ${({ theme }) => theme.backgroundHeader};
   color:  ${({ theme }) => theme.primary};
   padding: 1rem;
   font-family: "Montserrat";
@@ -59,6 +77,7 @@ const StyledLink = styled(Link)`
       color: ${({ theme }) => theme.hover};
     }
 `
+
 const StyledLinkIcon = styled(Link)`
     display:  flex;
     color: ${({theme}) => theme.primary};
@@ -82,6 +101,7 @@ const Menu = styled.div`
   font-weight: bold;
   transition: 1s;
 `
+
 const SetaMenu = styled.div`
   display: flex;
   justify-content: center;
@@ -146,6 +166,11 @@ function Header({toggleTheme, escuro}) {
           :'https://github.com/EmanuelAvgerino/marica-mais-emprego-/blob/main/img/LOGO%20PROJETO.png?raw=true' }
       >
       </Logo>
+        
+
+      <BotaoPerfil>
+        <AiOutlineUser />
+      </BotaoPerfil>
 
       <BotaoTema onClick={toggleTheme}>
           {escuro ? <i className="fas fa-sun"></i> : <i className="fas fa-moon"></i>}
