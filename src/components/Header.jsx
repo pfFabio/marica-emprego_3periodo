@@ -124,7 +124,7 @@ const BarraMenu = styled.div`
   border-radius: 8px;
   height: 0.2rem;
   width: 90%;
-  background-color: red;
+  background-color: yellow;
   `
   
 const ItemMenu = styled.div`
