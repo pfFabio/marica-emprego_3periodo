@@ -7,6 +7,8 @@ import Main from "./components/Main";
 import CadastroEmpresa from "./components/CadastroEmpresa";
 import CadastroCandidato from "./components/CadastroCandidato";
 import Feed from "./components/Feed";
+import PerfilEmpresa from "./components/PerfilEmpresa";
+import PerfilCandidato from "./components/PerfilCandidato";
 import { lightTheme, darkTheme } from "./theme";
 import GlobalStyle from "./temaGlobal";
 
@@ -25,6 +27,8 @@ function App() {
               <Route path="/" element={<Main />} />
               <Route path="/cadastroempresa" element={<CadastroEmpresa />} />
               <Route path="/cadastrocandidato" element={<CadastroCandidato />} />
+              <Route path="/perfilempresa" element={<PerfilEmpresa />} />
+              <Route path="/perfilcandidato" element={<PerfilCandidato />} />
               <Route path="/feed" element={<Feed />} />
             </Routes>
 
