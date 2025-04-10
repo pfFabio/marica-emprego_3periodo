@@ -9,7 +9,6 @@ const Container = styled.div`
 `
 
 const Content = styled.main`
-    flex-grow: 1;
     border-radius: 2rem;
     background-color: rgb(255, 255, 255);
     margin-left: 6rem;
@@ -18,6 +17,7 @@ const Content = styled.main`
     display: flex;
     flex-direction: column;
     height: 50rem;
+    width: 80rem;
     `
     
 const Header = styled.section`
@@ -62,24 +62,24 @@ const TelefonerInput = styled.input`
 const InfoGrid = styled.section`
     display: grid;
     grid: 10rem/ auto auto;
-    gap: 20px;
-    margin-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    height: 300px;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    height: 30rem;
 `
 
 const InfoBox = styled.div`
     background-color: #b2f5f5;
     padding: 1rem;
     border-radius: 2rem;
-    width: 40rem;
+    width: 34rem;
     `
 const InfoBoxfull = styled.div`
     background-color: #b2f5f5;
     padding: 15px;
     border-radius: 20px;
-    width: 40rem;
+    width: 34rem;
     height: 7rem;
 `
 
