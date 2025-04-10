@@ -6,7 +6,7 @@ const Container = styled.div`
     justify-content: flex-end;
     height: 100rem;
     width: 100vw;
-    background-color: #94E4FE;
+    background-color: #A8D0E6;
     font-family: 'Montserrat', sans-serif;
 `
 

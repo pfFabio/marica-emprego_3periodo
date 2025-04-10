@@ -68,6 +68,7 @@ const Logo = styled.img`
 
 const StyledLink = styled(Link)`
     display:  flex;
+    justify-content: center;
     color: ${({theme}) => theme.primary};
     text-decoration: none;
     font-size: 1rem;
@@ -149,13 +150,41 @@ const ItemMenuIcon = styled.div`
   transition: opacity 0.3s;
 `
 
+const CadastroOptionsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: ${({ theme }) => theme.backgroundHeader};
+  border-radius: 1rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 2rem;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+  transition: 1s ease-in-out;
+  
+  a {
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+    
+    &:hover {
+      color: ${({ theme }) => theme.hover};
+      font-weight: bolder;
+    }
+  }
+`;
 
 function Header({toggleTheme, escuro}) {
-  const [taAberto, setTaAberto] = useState(true)
+  const [taAberto, setTaAberto] = useState(true);
+  const [CadastroOptions, setCadastroOptions] = useState(false);
 
   const abreMenu = () =>{
     setTaAberto(!taAberto)
   }
+
+  const CadastroClick = () => {
+    setCadastroOptions(!CadastroOptions);
+  };
  
     return (
     <Cabeca abriu = {taAberto}>
@@ -167,10 +196,11 @@ function Header({toggleTheme, escuro}) {
       >
       </Logo>
         
-
-      <BotaoPerfil>
-        <AiOutlineUser />
-      </BotaoPerfil>
+      <StyledLink  to="/perfilcandidato">
+        <BotaoPerfil>
+          <AiOutlineUser />
+        </BotaoPerfil>
+      </StyledLink>
 
       <BotaoTema onClick={toggleTheme}>
           {escuro ? <i className="fas fa-sun"></i> : <i className="fas fa-moon"></i>}
@@ -192,12 +222,18 @@ function Header({toggleTheme, escuro}) {
         <BarraMenu />
 
         <ItemMenuIcon  abriu = {taAberto}>
-          <StyledLinkIcon to='/cadastrocandidato'><BiSolidUserPlus/></StyledLinkIcon> 
+          <StyledLinkIcon onClick={CadastroClick} ><BiSolidUserPlus/></StyledLinkIcon> 
         </ItemMenuIcon>
-        <ItemMenu  abriu = {taAberto}>
-          <StyledLink to='/cadastrocandidato'>Cadastro</StyledLink> 
+        <ItemMenu  abriu = {taAberto} onClick={CadastroClick}>
+          <StyledLink>Cadastro</StyledLink> 
         </ItemMenu>
-
+        {
+        CadastroOptions && (
+          <CadastroOptionsContainer>
+            <StyledLink to="/cadastrocandidato">Sou Candidato</StyledLink>
+            <StyledLink to="/cadastroempresa">Sou Empresa</StyledLink>
+          </CadastroOptionsContainer>
+        )}
         <BarraMenu />
 
         <ItemMenuIcon  abriu = {taAberto}>
