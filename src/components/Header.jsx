@@ -122,7 +122,7 @@ const SetaMenu = styled.div`
   `
 
 const BarraMenu = styled.div`
-  border-radius: 8px;
+  border-radius: 1rem;
   height: 0.2rem;
   width: 90%;
   background-color: yellow;
@@ -237,10 +237,10 @@ function Header({toggleTheme, escuro}) {
         <BarraMenu />
 
         <ItemMenuIcon  abriu = {taAberto}>
-          <StyledLinkIcon to='/feed'><BiUserCircle/></StyledLinkIcon>
+          <StyledLinkIcon to='/login'><BiUserCircle/></StyledLinkIcon>
         </ItemMenuIcon>
         <ItemMenu  abriu = {taAberto}>
-          <StyledLink to='/feed'>Login</StyledLink>
+          <StyledLink to='/login'>Login</StyledLink>
         </ItemMenu>
 
 
