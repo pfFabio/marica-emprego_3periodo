@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import React, {useState} from "react";
+import { useNavigate } from "react-router-dom";
 
 const Body = styled.div`
 display: flex;
@@ -58,20 +60,40 @@ margin-top: 2rem;
 
 
 function Login(){
+    const [credenciais, setCredenciais] = useState({login: '', senha: ''});
+    const navegar = useNavigate();
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setCredenciais({
+            ...credenciais,
+            [name]: value,
+        });
+    };
+
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+        const {login} = credenciais;
+        const destino = login === 'candidato' ? '/feed' : '/feedempresa';
+        navegar(destino)
+    }
     return(
         <Body>
             <Container>
-                <Form action="">
-                    <Label for="login"> ID ou E-Mail</Label>
-                    <Input type="text" name="login" />
-                    <Label for="senha"> SENHA</Label>
-                    <Input type="password" name="senha" />
+                <Form onSubmit={handleSubmit}>
+
+                    <Label htmlFor="login"> ID ou E-Mail</Label>
+                    <Input type="text" name="login" value={credenciais.login} onChange={handleInputChange} />
+
+                    <Label htmlFor="senha"> SENHA</Label>
+                    <Input type="password" name="senha" value={credenciais.senha} onChange={handleInputChange}/>
+
                     <Lembrar>
                         <input type="checkbox" name="lembrar"/>
                         Lembre-se de mim
                     </Lembrar>
                         <a href="/">Esqueci minha senha </a>
-                    <Enviar type="submit"><a href="/feed">enviar</a></Enviar>
+                    <Enviar type="submit">enviar</Enviar>
                 </Form>
             </Container>
         </Body>

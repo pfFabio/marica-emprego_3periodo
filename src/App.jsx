@@ -7,6 +7,7 @@ import Main from "./components/Main";
 import CadastroEmpresa from "./components/CadastroEmpresa";
 import CadastroCandidato from "./components/CadastroCandidato";
 import Feed from "./components/Feed";
+import FeedEmpresa from "./components/FeedEmpresa";
 import Login from "./components/Login";
 import PerfilEmpresa from "./components/PerfilEmpresa";
 import PerfilCandidato from "./components/PerfilCandidato";
@@ -31,6 +32,7 @@ function App() {
               <Route path="/perfilempresa" element={<PerfilEmpresa />} />
               <Route path="/perfilcandidato" element={<PerfilCandidato />} />
               <Route path="/feed" element={<Feed />} />
+              <Route path="/feedempresa" element={<FeedEmpresa />} />
               <Route path="/login" element={<Login />} />
             </Routes>
 
