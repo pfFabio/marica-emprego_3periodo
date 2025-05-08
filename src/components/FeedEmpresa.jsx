@@ -3,12 +3,14 @@ import styled from "styled-components";
 
 const Body = styled.div`
     display: flex;
+    justify-content: center;
     height: 100%;
+    width: 100vw;
     background-color: #6bdae2;
 `
-
+    
 const ConteudoPrincipal = styled.div`
-    flex: 1;
+    width: 80%;
     padding: 1.8rem;
 `
   

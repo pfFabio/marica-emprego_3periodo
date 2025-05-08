@@ -10,6 +10,7 @@ import Feed from "./components/Feed";
 import FeedEmpresa from "./components/FeedEmpresa";
 import Login from "./components/Login";
 import PerfilEmpresa from "./components/PerfilEmpresa";
+import CadastrarVaga from "./components/CadastrarVaga";
 import PerfilCandidato from "./components/PerfilCandidato";
 import { lightTheme, darkTheme } from "./theme";
 import GlobalStyle from "./temaGlobal";
@@ -29,6 +30,7 @@ function App() {
               <Route path="/" element={<Main />} />
               <Route path="/cadastrocandidato" element={<CadastroEmpresa />} />
               <Route path="/cadastroempresa" element={<CadastroCandidato />} />
+              <Route path="/cadastrarvaga" element={<CadastrarVaga />} />
               <Route path="/perfilempresa" element={<PerfilEmpresa />} />
               <Route path="/perfilcandidato" element={<PerfilCandidato />} />
               <Route path="/feed" element={<Feed />} />

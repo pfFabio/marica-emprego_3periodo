@@ -169,7 +169,7 @@ function PerfilEmpresa(){
                     <InfoBoxfull>
                         <h3>Publicações da página:</h3>
                         <PostIcon>
-                            <Icon>➕</Icon>
+                            <a href="/cadastrarvaga"><Icon>➕</Icon></a>
                             <Icon>🖼️</Icon>
                         </PostIcon>
                     </InfoBoxfull>

@@ -196,7 +196,7 @@ function Header({toggleTheme, escuro}) {
       >
       </Logo>
         
-      <StyledLink  to="/perfilcandidato">
+      <StyledLink  to="/perfilempresa">
         <BotaoPerfil>
           <AiOutlineUser />
         </BotaoPerfil>
