@@ -4,6 +4,7 @@ const Body = styled.div`
   font-family: Arial, sans-serif;
   display: flex;
   background-color: #A8D0E6;
+  width:100%;
   `
 const Container = styled.div`
   display: flex;
