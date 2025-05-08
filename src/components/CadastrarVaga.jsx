@@ -34,7 +34,7 @@ const Header = styled.div`
 
 const JobForm = styled.form`
     margin-top: 30px;
-    margin-left: 5rem;
+    margin-left: 6rem;
     margin-right: 10rem;
     display: flex;
     flex-direction: column;

@@ -2,22 +2,18 @@ import styled from "styled-components";
 
 const Container = styled.div`
     display: flex;
-    justify-content: flex-end;
-    height: 400rem;
-    width: 100vw;
+    justify-content: center;
     background-color: #94E4FE;
+    width: 100%
 `
 
 const Content = styled.main`
     border-radius: 2rem;
     background-color: rgb(255, 255, 255);
-    margin-left: 6rem;
-    margin-right: 4rem;
+    margin-left: 8rem;
     margin-top: 5rem;
-    display: flex;
-    flex-direction: column;
-    height: 50rem;
-    width: 80rem;
+    height: 42rem;
+    width: 50rem;
     `
     
 const Header = styled.section`
@@ -31,32 +27,29 @@ const Header = styled.section`
     gap: 2rem;
     background: linear-gradient(to top,rgb(255, 255, 255) 50%, #24E8DE 50%);
     overflow: hidden;
-    padding-top: 3rem;
 `
 
 const ProfilePic = styled.div`
-    width: 120px;
-    height: auto;
+    width: 3rem;
     background-color: #c9eff8;
     border-radius: 50%;
 `
 
 const Company = styled.div`
-    flex-grow: 1;
-    padding-top: 5rem;
+    padding-top: 2rem;
 `
 
 const Telefone = styled.div`
     display: flex;
     align-items: center;
-    padding-top: 50px;
+    padding-top: 1rem;
 `
 
 const TelefonerInput = styled.input`
-    margin-left: 10px;
+    margin-left: 1rem;
     border: 1px solid #000;
-    border-radius: 20px;
-    padding: 5px 10px;
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
 `
 
 const InfoGrid = styled.section`
@@ -66,62 +59,63 @@ const InfoGrid = styled.section`
     margin-top: 2rem;
     padding-left: 2rem;
     padding-right: 2rem;
-    height: 30rem;
+    height: 7rem;
 `
 
 const InfoBox = styled.div`
     background-color: #b2f5f5;
-    padding: 1rem;
+    padding: 0.5rem;
     border-radius: 2rem;
-    width: 34rem;
+    width: 20rem;
+    height: 7rem;
     `
 const InfoBoxfull = styled.div`
     background-color: #b2f5f5;
-    padding: 15px;
-    border-radius: 20px;
-    width: 34rem;
-    height: 7rem;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    width: 20rem;
+    height: 5rem;
 `
 
 const Edit = styled.span`
     cursor: pointer;
-    margin-left: 5px;
+    margin-left: 0.5rem;
 `
 
 const PostIcon = styled.div`
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 1rem;
 `
 
 const Icon = styled.span`
-    font-size: 3rem;
+    font-size: 1rem;
     cursor: pointer;
 `
 
 const CampoEditavel = styled.input`
-    width: 90%;
-    padding: 10px 15px;
+    width: 50%;
+    height: 10%;
+    padding: 1rem 1.5rem;
     border: 1px solid #aaa;
-    border-radius: 10px;
-    font-size: 16px;
-    margin-top: 8px;
+    border-radius: 1rem;
+    font-size: 1rem;
     background-color: #f0fefe;
     transition: border-color 0.3s;
 `
 
 const AddIcon = styled.span`
     position: absolute;
-    bottom: 4rem;
-    left: 8rem;
+    bottom: 3rem;
+    left: 5rem;
     background-color: #22e0db;
     color: #fff;
-    font-size: 2rem;
-    width: 2rem;
-    height: 2rem;
+    font-size: 1rem;
+    width: 1rem;
+    height: 1rem;
     border-radius: 50%;
     text-align: center;
-    line-height: 2rem;
+    line-height: 1rem;
     font-weight: bold;
     cursor: pointer;
 `
