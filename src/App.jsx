@@ -28,8 +28,8 @@ function App() {
 
             <Routes>
               <Route path="/" element={<Main />} />
-              <Route path="/cadastrocandidato" element={<CadastroEmpresa />} />
-              <Route path="/cadastroempresa" element={<CadastroCandidato />} />
+              <Route path="/cadastroempresa" element={<CadastroEmpresa />} />
+              <Route path="/cadastrocandidato" element={<CadastroCandidato />} />
               <Route path="/cadastrarvaga" element={<CadastrarVaga />} />
               <Route path="/perfilempresa" element={<PerfilEmpresa />} />
               <Route path="/perfilcandidato" element={<PerfilCandidato />} />
