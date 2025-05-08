@@ -1,109 +1,114 @@
 import styled from "styled-components"
 
-const Body = styled.body`
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+const Body = styled.div`
   display: flex;
-  height: 100vh;
-`
-const Container = styled.div`
-  display: flex;
-  width: 100%;
-`
-
-
-const Content = styled.main`
-  display: flex;
-  flex-grow: 1;
-  background: #A8D0E6;
-  padding: 40px;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  background-color: #BFD7EA;
 `
 
-const Info = styled.section`
-  max-width: 40%;
-  text-align: center;
-  margin: 120px;
-`
-
-const Illustration = styled.img`
-    width: 100%;
-    max-width: 300px;
-    border-radius: 50%;
-`
-
-const Quote = styled.p`
-  font-size: 30px;
-  color: #24305E;
-`
-
-
-
-const Form = styled.form`
+const Content = styled.div`
   display: flex;
-  flex-direction: column;
-  width: 25%;
-  height: auto;
-  margin: 120px;
+  align-items: center;
+  width: 70%;
 `
 
-const Input = styled.input`
-  margin-bottom: 20px;
-  padding: 10px;
-  border: 1px solid #E9E9E9;
-  border-radius: 20px;
-  font-size: 16px;
+const Info = styled.div`
+  text-align: center;
+  width: 40%;
+  margin: 2rem;
 `
 
-const Button = styled.button`
-
-  background: #F6F6F6;
-  color: #F76C6C;
-  border: none;
-  padding: 8px;
-  font-size: 14px;
-  font-weight: bold;
-  border-radius: 20px;
-  cursor: pointer;
-  width: 100px;
-  align-self: center;
+const Img = styled.img`
+  width: 80%;
 `
 
 const P = styled.p`
-  font-size: 30px;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  color: #24305E;
+  font-size: 2rem;
+  margin-top: 1rem;
 `
 
-function CadastroEmpresa(){
-  return(
-    <Body>
-      <Container>
-        <Content>
-          <Info>
-              <Illustration src="https://github.com/pfFabio/images/blob/main/Imagem_do_WhatsApp_de_2025-04-02_%C3%A0_s__11.17.51_2e1b4da6-removebg-preview.png?raw=true" alt="Enfermeira"/>
-              <Quote>
-                  "Esta é a sua oportunidade de dar o <b>próximo passo</b> na sua carreira!"
-              </Quote>
-          </Info>
-          <Form>
-              <P>Cadastre-se</P>
-              <Input type="text" placeholder="Nome do candidato"/>
-              <Input type="email" placeholder="E-mail"/>
-              <Input type="tel" placeholder="Telefone"/>
-              <Input type="text" placeholder="Endereço"/>
-              <Input type="password" placeholder="Senha"/>
-              <Input type="password" placeholder="Confirme sua senha"/>
-              <Button type="submit">Enviar</Button>
-          </Form>
-        </Content>
-      </Container>
-    </Body>
-    )
-}
 
-export default CadastroEmpresa;
+const TituloForm = styled.h2`
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+`
+
+const FormContainer = styled.div`
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5%;
+`
+
+const EmpresaForm = styled.form`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 10rem;
+`
+
+const Input = styled.input`
+  width: 90%;
+  padding: 0.8rem;
+  background-color: #F5F5F5;
+  margin: 1rem 0;
+  border: 0.1rem solid #ddd;
+  border-radius: 2rem;
+  font-size: 1rem;
+`
+
+const Button = styled.button`
+  width: 40%;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #f8f5f5;
+  color: rgb(245, 23, 23);
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+  &:hover{
+    background-color: #D43F3F;
+  }
+`
+
+
+function Cadastro(){
+
+
+  return(
+    <>
+      <Body>
+          <Content>
+              <Info>
+                  <Img src="https://github.com/pfFabio/images/blob/main/IMG-20250402-WA0065__1_-removebg-preview.png?raw=true" alt="Imagem professor"/>
+                  <P>“Encontramos o melhor candidato para <b>melhor vaga, para melhor empresa!”</b></P>
+              </Info>
+              <FormContainer>
+                <TituloForm>Cadastre-se</TituloForm>
+                <EmpresaForm>
+                  <Input type="text" id="nome" name="nome" placeholder="Nome da Empresa" required/>
+                  <Input type="email" id="email" name="email" placeholder="E-mail" required/>
+                  <Input type="tel" id="telefone" name="telefone" placeholder="Telefone" required/>
+                  <Input type="text" id="endereco" name="endereco" placeholder="Endereço" required/>
+                  <Input type="password" id="senha" name="senha" placeholder="Senha" required/>
+                  <Input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme sua Senha" required/>
+                  <Button type="submit"><b>Enviar</b></Button>
+                </EmpresaForm>
+              </FormContainer>
+        </Content>
+
+      </Body>
+
+    </>
+  );
+};
+
+export default Cadastro;

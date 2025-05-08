@@ -1,120 +1,101 @@
 import styled from "styled-components"
 
-const Body = styled.body`
+const Body = styled.div`
+  font-family: Arial, sans-serif;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-  background-color: #BFD7EA;
-`
-
-const Content = styled.div`
+  background-color: #A8D0E6;
+  `
+const Container = styled.div`
   display: flex;
-  align-items: center;
+  `
+  
+  
+  const Content = styled.main`
+  display: flex;
+  padding: 4rem;
   justify-content: space-between;
-  width: 80%;
+  align-items: center;
 `
 
-const Info = styled.div`
-  text-align: center;
-  width: 50%;
-  padding: 20px;
-`
-
-const Img = styled.img`
-  max-width: 300px;
+const Info = styled.section`
   width: 100%;
-`
-
-const P = styled.p`
-  font-size: 22px;
-  color: #333;
-  margin-top: 15px;
-  font-weight: normal;
-`
-
-
-const TituloForm = styled.h2`
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 25px;
+  max-width: 20rem;
   text-align: center;
+  margin-left: 6rem;
 `
 
-const FormContainer = styled.div`
-  width: 35%;
+const Illustration = styled.img`
+    width: 100%;
+    border-radius: 50%;
+`
+
+const Quote = styled.p`
+  font-size: 2rem;
+  color: #24305E;
+`
+const Form = styled.form`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding-top: 5%;
-`
-
-const EmpresaForm = styled.form`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: 100px;
+  width: 40%;
+  height: auto;
+  padding: 2rem;
 `
 
 const Input = styled.input`
-  width: 90%;
-  padding: 8px;
-  background-color: #F5F5F5;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 25px;
-  font-size: 16px;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 1px solid #E9E9E9;
+  border-radius: 2rem;
+  font-size: 1rem;
 `
 
 const Button = styled.button`
-  width: 40%;
-  margin-top: 20px;
-  padding: 12px;
-  background-color: #f8f5f5;
-  color: rgb(245, 23, 23);
+
+  background-color: #F6F6F6;
+  color: #F76C6C;
   border: none;
-  border-radius: 25px;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 2rem;
   cursor: pointer;
-  font-size: 16px;
-  transition: background 0.3s;
-  &:hover{
-    background-color: #D43F3F;
-  }
+  width: 10rem;
+  align-self: center;
 `
 
+const P = styled.p`
+  font-size: 2rem;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: #24305E;
+`
 
-function Cadastro(){
-
-
+function CadastroEmpresa(){
   return(
-    <>
-      <Body>
-          <Content>
-              <Info>
-                  <Img src="https://github.com/pfFabio/images/blob/main/IMG-20250402-WA0065__1_-removebg-preview.png?raw=true" alt="Imagem professor"/>
-                  <P>“Encontramos o melhor candidato para <b>melhor vaga, para melhor empresa!”</b></P>
-              </Info>
-              <FormContainer>
-                <TituloForm>Cadastre-se</TituloForm>
-                <EmpresaForm>
-                  <Input type="text" id="nome" name="nome" placeholder="Nome da Empresa" required/>
-                  <Input type="email" id="email" name="email" placeholder="E-mail" required/>
-                  <Input type="tel" id="telefone" name="telefone" placeholder="Telefone" required/>
-                  <Input type="text" id="endereco" name="endereco" placeholder="Endereço" required/>
-                  <Input type="password" id="senha" name="senha" placeholder="Senha" required/>
-                  <Input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme sua Senha" required/>
-                  <Button type="submit"><b>Enviar</b></Button>
-                </EmpresaForm>
-              </FormContainer>
+    <Body>
+      <Container>
+        <Content>
+          <Info>
+              <Illustration src="https://github.com/pfFabio/images/blob/main/Imagem_do_WhatsApp_de_2025-04-02_%C3%A0_s__11.17.51_2e1b4da6-removebg-preview.png?raw=true" alt="Enfermeira"/>
+              <Quote>
+                  "Esta é a sua oportunidade de dar o <b>próximo passo</b> na sua carreira!"
+              </Quote>
+          </Info>
+          <Form>
+              <P>Cadastre-se</P>
+              <Input type="text" placeholder="Nome do candidato"/>
+              <Input type="email" placeholder="E-mail"/>
+              <Input type="tel" placeholder="Telefone"/>
+              <Input type="text" placeholder="Endereço"/>
+              <Input type="password" placeholder="Senha"/>
+              <Input type="password" placeholder="Confirme sua senha"/>
+              <Button type="submit">Enviar</Button>
+          </Form>
         </Content>
+      </Container>
+    </Body>
+    )
+}
 
-      </Body>
-
-    </>
-  );
-};
-
-export default Cadastro;
+export default CadastroEmpresa;
