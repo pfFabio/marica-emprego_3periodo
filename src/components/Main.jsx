@@ -17,7 +17,7 @@ const Div = styled.div`
 
 const Container = styled.div`
   display: flex;
-  justify-content: center;
+  width: 50rem;
 
 `
 
@@ -100,18 +100,18 @@ function Main() {
             <img src="https://github.com/EmanuelAvgerino/marica-mais-emprego-/blob/main/img/fundo.png?raw=true" alt="imagemPrincipal" width='100%'/>
           </Container>
 
-        <Texto>
-          <TextoUm id='textoUm' >
-              O projeto "Maricá+Emprego" reúne o útil ao agradável na hora de você, candidato ou 
-            empresa, procurar e/ou oferecer uma vaga de emprego, gerando cada vez mais mão-de-obra 
-            para a cidade, simplificando para todos, juntamente ao SINE e a    Prefeitura de Maricá. 
-          </TextoUm>
-          <TextoDois>
-            Nós visamos facilitar a procura e entrega de vagas por meio da criação de um
-            perfil que guarda as informações do usuário/empresa cadastrados, comparando os perfis
-            dos candidatos com as vagas ofertadas e dando um "match" entre os participantes.
-          </TextoDois>
-        </Texto>
+          <Texto>
+            <TextoUm id='textoUm' >
+                O projeto "Maricá+Emprego" reúne o útil ao agradável na hora de você, candidato ou 
+              empresa, procurar e/ou oferecer uma vaga de emprego, gerando cada vez mais mão-de-obra 
+              para a cidade, simplificando para todos, juntamente ao SINE e a    Prefeitura de Maricá. 
+            </TextoUm>
+            <TextoDois>
+              Nós visamos facilitar a procura e entrega de vagas por meio da criação de um
+              perfil que guarda as informações do usuário/empresa cadastrados, comparando os perfis
+              dos candidatos com as vagas ofertadas e dando um "match" entre os participantes.
+            </TextoDois>
+          </Texto>
         
       </section>
 

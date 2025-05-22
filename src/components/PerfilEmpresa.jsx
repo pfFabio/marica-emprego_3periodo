@@ -10,7 +10,6 @@ const Container = styled.div`
 const Content = styled.main`
     border-radius: 2rem;
     background-color: rgb(255, 255, 255);
-    margin-left: 8rem;
     margin-top: 5rem;
     height: 42rem;
     width: 50rem;

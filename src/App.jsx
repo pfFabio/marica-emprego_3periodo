@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import CadastroEmpresa from "./components/CadastroEmpresa";
 import CadastroCandidato from "./components/CadastroCandidato";
-import Feed from "./components/Feed";
+import FeedCandidato from "./components/FeedCandidato";
 import FeedEmpresa from "./components/FeedEmpresa";
 import Login from "./components/Login";
 import PerfilEmpresa from "./components/PerfilEmpresa";
@@ -33,7 +33,7 @@ function App() {
               <Route path="/cadastrarvaga" element={<CadastrarVaga />} />
               <Route path="/perfilempresa" element={<PerfilEmpresa />} />
               <Route path="/perfilcandidato" element={<PerfilCandidato />} />
-              <Route path="/feed" element={<Feed />} />
+              <Route path="/feedcandidato" element={<FeedCandidato />} />
               <Route path="/feedempresa" element={<FeedEmpresa />} />
               <Route path="/login" element={<Login />} />
             </Routes>
