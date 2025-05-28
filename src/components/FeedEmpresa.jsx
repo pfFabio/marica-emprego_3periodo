@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {useState, useEffect} from 'react'
 
 
 const Body = styled.div`
@@ -161,6 +162,14 @@ const BotaoRejeitar = styled.button`
 
 
 function FeedEmpresa(){
+    const[candidatos, setCandidatos] = useState([])
+    
+    useEffect(() =>{
+        fetch('/candidatos.json')
+            .then(Response => Response.json())
+            .then(data => setCandidatos(data))
+    }, []);
+
     return(
         <Body>
         
@@ -170,166 +179,24 @@ function FeedEmpresa(){
                 </CaixaPesquisa>
 
                 <ContainerCartoes>
+                    {candidatos.map(candidato =>(
                 
-                    <Cartao>
+                    <Cartao key = {candidato.id}>
                         <CabecalhoCartao>
-                            <Avatar>E</Avatar>
+                            <Avatar>{candidato.avatar}</Avatar>
                             <div>
-                                <h3>Emanuel Avgerino</h3>
-                                <small>Estágio TI</small>
+                                <h3>{candidato.nome}</h3>
+                                <small>{candidato.vaga}</small>
                             </div>
                         </CabecalhoCartao>
-                        <p>Sou estudante de Engenharia de Software, atualmente no 4º período, com bastante interesse em desenvolvimento web. Tenho experiência com HTML, CSS e JavaScript, e venho me aprofundando em React.</p>
+                        <p>{candidato.descricao}</p>
                         <a href="#" class="botao-link">Ver Perfil</a>
                         <BotoesCartao>
                             <BotaoRejeitar>Rejeitar</BotaoRejeitar>
                             <BotaoAprovar>Aprovar</BotaoAprovar>
                         </BotoesCartao>
                     </Cartao>
-                    
-                    <Cartao>
-                        <CabecalhoCartao>
-                            <Avatar>F</Avatar>
-                            <div>
-                                <h3>Fabio Figueiredo</h3>
-                                <small>Estágio TI</small>
-                            </div>
-                        </CabecalhoCartao>
-                        <p>Curso Análise de Sistemas e busco sempre aprender. Tenho conhecimento em Python, MySQL e Git, e já participei de hackathons e minicursos.</p>
-                        <a href="#" class="botao-link">Ver Perfil</a>
-                        <div class="botoes-cartao">
-                        <BotaoRejeitar>Rejeitar</BotaoRejeitar>
-                        <BotaoAprovar>Aprovar</BotaoAprovar>
-                        </div>
-                    </Cartao>
-                    
-                    <Cartao>
-                        <CabecalhoCartao>
-                            <Avatar>G</Avatar>
-                            <div>
-                                <h3>Giovana Rocha</h3>
-                                <small>Estágio TI</small>
-                            </div>
-                        </CabecalhoCartao>
-                        <p>Estudo Ciência da Computação e amo UX/UI. Trabalhei com Figma, HTML, CSS e JavaScript em projetos acadêmicos, e sou ótima comunicadora.</p>
-                        <a href="#" class="botao-link">Ver Perfil</a>
-                        <div class="botoes-cartao">
-                        <BotaoRejeitar>Rejeitar</BotaoRejeitar>
-                        <BotaoAprovar>Aprovar</BotaoAprovar>
-                        </div>
-                    </Cartao>
-                    
-                    <Cartao>
-                        <CabecalhoCartao>
-                            <Avatar>W</Avatar>
-                            <div>
-                                <h3>Wictória Salgado</h3>
-                                <small>Estágio TI</small>
-                            </div>
-                        </CabecalhoCartao>
-                        <p>Cursando Sistemas de Informação, foco no back end. Tenho conhecimento em Java, Python e lógica de programação.</p>
-                        <a href="#" class="botao-link">Ver Perfil</a>
-                        <div class="botoes-cartao">
-                        <BotaoRejeitar>Rejeitar</BotaoRejeitar>
-                        <BotaoAprovar>Aprovar</BotaoAprovar>
-                        </div>
-                    </Cartao>
-                    
-                    <Cartao>
-                        <CabecalhoCartao>
-                            <Avatar>V</Avatar>
-                            <div>
-                                <h3>Vinícius Dantas</h3>
-                                <small>Estágio Redes</small>
-                            </div>
-                        </CabecalhoCartao>
-                        <p>Estudo Redes de Computadores. Tenho prática com infraestrutura, roteadores e protocolos. Proativo e organizado.</p>
-                        <a href="#" class="botao-link">Ver Perfil</a>
-                        <div class="botoes-cartao">
-                        <BotaoRejeitar>Rejeitar</BotaoRejeitar>
-                        <BotaoAprovar>Aprovar</BotaoAprovar>
-                        </div>
-                    </Cartao>
-                    
-                    <Cartao>
-                        <CabecalhoCartao>
-                            <Avatar>C</Avatar>
-                            <div>
-                                <h3>Camila Martins</h3>
-                                <small>Estágio QA</small>
-                            </div>
-                        </CabecalhoCartao>
-                        <p>Sou detalhista e amo testar software. Estudo Engenharia da Computação e conheço ferramentas como Selenium e JUnit.</p>
-                        <a href="#" class="botao-link">Ver Perfil</a>
-                        <div class="botoes-cartao">
-                        <BotaoRejeitar>Rejeitar</BotaoRejeitar>
-                        <BotaoAprovar>Aprovar</BotaoAprovar>
-                        </div>
-                    </Cartao>
-                    
-                    <Cartao>
-                        <CabecalhoCartao>
-                            <Avatar>R</Avatar>
-                            <div>
-                                <h3>Rodrigo Lima</h3>
-                                <small>Estágio Suporte</small>
-                            </div>
-                        </CabecalhoCartao>
-                        <p>Tenho experiência em suporte técnico, formatação de PCs, redes e atendimento ao cliente. Estudante de ADS.</p>
-                        <a href="#" class="botao-link">Ver Perfil</a>
-                        <div class="botoes-cartao">
-                        <BotaoRejeitar>Rejeitar</BotaoRejeitar>
-                        <BotaoAprovar>Aprovar</BotaoAprovar>
-                        </div>
-                    </Cartao>
-                    
-                    <Cartao>
-                        <CabecalhoCartao>
-                            <Avatar>J</Avatar>
-                            <div>
-                                <h3>Juliana Nogueira</h3>
-                                <small>Estágio Design</small>
-                            </div>
-                        </CabecalhoCartao>
-                        <p>Estudante de Design Digital. Trabalho com Adobe XD, Illustrator e Figma. Gosto de criar interfaces intuitivas e acessíveis.</p>
-                        <a href="#" class="botao-link">Ver Perfil</a>
-                        <div class="botoes-cartao">
-                        <BotaoRejeitar>Rejeitar</BotaoRejeitar>
-                        <BotaoAprovar>Aprovar</BotaoAprovar>
-                        </div>
-                    </Cartao>
-                    
-                    <Cartao>
-                        <CabecalhoCartao>
-                            <Avatar>D</Avatar>
-                            <div>
-                                <h3>Diego Ramos</h3>
-                                <small>Estágio Dados</small>
-                            </div>
-                        </CabecalhoCartao>
-                        <p>Foco em análise de dados. Conhecimento em Python, Pandas, SQL e Power BI. Participei de projeto de análise de churn para e-commerce.</p>
-                        <a href="#" class="botao-link">Ver Perfil</a>
-                        <div class="botoes-cartao">
-                        <BotaoRejeitar>Rejeitar</BotaoRejeitar>
-                        <BotaoAprovar>Aprovar</BotaoAprovar>
-                        </div>
-                    </Cartao>
-                    
-                    <Cartao>
-                        <CabecalhoCartao>
-                            <Avatar>B</Avatar>
-                            <div>
-                                <h3>Beatriz Costa</h3>
-                                <small>Estágio Full Stack</small>
-                            </div>
-                        </CabecalhoCartao>
-                        <p>Conhecimento em Node.js, React e bancos de dados SQL/NoSQL. Participa de bootcamp e projetos open source.</p>
-                        <a href="#" class="botao-link">Ver Perfil</a>
-                        <div class="botoes-cartao">
-                            <BotaoRejeitar>Rejeitar</BotaoRejeitar>
-                            <BotaoAprovar>Aprovar</BotaoAprovar>
-                        </div>
-                    </Cartao>
+                    ))}
                 </ContainerCartoes>
                 
             </ConteudoPrincipal>
