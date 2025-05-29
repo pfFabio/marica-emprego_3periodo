@@ -1,5 +1,9 @@
 import styled from "styled-components";
+<<<<<<< HEAD
 import { useState, useEffect } from "react";
+=======
+import {useState, useEffect} from 'react'
+>>>>>>> bbcda20512ee106e07931c3462bf264b4e5add28
 
 
 const Body = styled.div`
@@ -140,10 +144,17 @@ const BotaoRejeitar = styled.button`
 
 function FeedEmpresa(){
     const[candidatos, setCandidatos] = useState([])
+<<<<<<< HEAD
 
     useEffect(() =>{
         fetch('/candidatos.json')
             .then(response => response.json())
+=======
+    
+    useEffect(() =>{
+        fetch('/candidatos.json')
+            .then(Response => Response.json())
+>>>>>>> bbcda20512ee106e07931c3462bf264b4e5add28
             .then(data => setCandidatos(data))
     }, []);
 
@@ -157,6 +168,7 @@ function FeedEmpresa(){
 
                 <ContainerCartoes>
                     {candidatos.map(candidato =>(
+<<<<<<< HEAD
                         <Cartao key = {candidato.id}>
                             <CabecalhoCartao>
                                 <Avatar>{candidato.avatar}</Avatar>
@@ -172,6 +184,24 @@ function FeedEmpresa(){
                                 <BotaoAprovar>Aprovar</BotaoAprovar>
                             </BotoesCartao>
                         </Cartao>
+=======
+                
+                    <Cartao key = {candidato.id}>
+                        <CabecalhoCartao>
+                            <Avatar>{candidato.avatar}</Avatar>
+                            <div>
+                                <h3>{candidato.nome}</h3>
+                                <small>{candidato.vaga}</small>
+                            </div>
+                        </CabecalhoCartao>
+                        <p>{candidato.descricao}</p>
+                        <a href="#" class="botao-link">Ver Perfil</a>
+                        <BotoesCartao>
+                            <BotaoRejeitar>Rejeitar</BotaoRejeitar>
+                            <BotaoAprovar>Aprovar</BotaoAprovar>
+                        </BotoesCartao>
+                    </Cartao>
+>>>>>>> bbcda20512ee106e07931c3462bf264b4e5add28
                     ))}
                 </ContainerCartoes>
                 
