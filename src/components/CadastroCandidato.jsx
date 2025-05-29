@@ -4,17 +4,17 @@ const Body = styled.div`
   font-family: Arial, sans-serif;
   display: flex;
   background-color: #A8D0E6;
-  width:100%;
+  height: 100%;
   `
-const Container = styled.div`
+  const Container = styled.div`
   display: flex;
+  justify-content: space-around;
+  width: 100%;
   `
   
   
   const Content = styled.main`
   display: flex;
-  padding: 4rem;
-  justify-content: space-between;
   align-items: center;
 `
 

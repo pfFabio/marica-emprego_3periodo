@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import "./App.css";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Main from "./components/Main";
 import CadastroEmpresa from "./components/CadastroEmpresa";
 import CadastroCandidato from "./components/CadastroCandidato";
@@ -37,6 +38,8 @@ function App() {
               <Route path="/feedempresa" element={<FeedEmpresa />} />
               <Route path="/login" element={<Login />} />
             </Routes>
+
+            <Footer/>
 
       </ThemeProvider>
     </Router>

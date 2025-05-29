@@ -70,7 +70,8 @@ const Company=styled.div`
  
   
   const InfoGrid = styled.section`
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     grid: 10rem/ auto auto;
     gap: 2rem;
     margin-top: 2rem;

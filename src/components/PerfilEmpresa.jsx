@@ -4,7 +4,8 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     background-color: #94E4FE;
-    width: 100%
+    width: 100%;
+    height: 100%;
 `
 
 const Content = styled.main`

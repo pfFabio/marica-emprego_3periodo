@@ -5,6 +5,7 @@ const Body = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #BFD7EA;
+  height: 100%;
 `
 
 const Content = styled.div`

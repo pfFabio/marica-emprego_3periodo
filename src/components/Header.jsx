@@ -55,7 +55,7 @@ const Cabeca = styled.header`
   color:  ${({ theme }) => theme.primary};
   padding: 1rem;
   font-family: "Montserrat";
-  height: 100vh;
+  height: 100%;
   transition: 0.3s ease-in-out;
 `
 

@@ -74,7 +74,7 @@ function Login(){
     const handleSubmit = (e) =>{
         e.preventDefault();
         const {login} = credenciais;
-        const destino = login === 'candidato' ? '/feed' : '/feedempresa';
+        const destino = login === 'candidato' ? '/feedcandidato' : '/feedempresa';
         navegar(destino)
     }
     return(
