@@ -1,34 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import logoImg from './img/ME+.png'; // ajuste o caminho se precisar
+import logoImg from './img/ME+.png';
 
 const Container = styled.div`
   display: flex;
   height: 100vh;
   font-family: Arial, sans-serif;
   background-color: #f4f5f7;
-`;
-
-const Sidebar = styled.aside`
-  width: 80px;
-  background-color: #ffffff;
-  color: #1d2951;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const Logo = styled.div`
-  width: 100%;
-  height: 80px;
-  background: #F76C6C;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const LogoImg = styled.img`
-  max-width: 80px;
 `;
 
 const MainMenu = styled.nav`
@@ -121,17 +99,6 @@ const Message = styled.p`
 const Dashboard = () => {
   return (
     <Container>
-      <Sidebar>
-        <Logo>
-          <LogoImg src={logoImg} alt="Logo" />
-        </Logo>
-        <MainMenu>
-          <MenuLink href="#">Início</MenuLink>
-          <MenuLink href="#">Sobre</MenuLink>
-          <MenuLink href="#">FAQ</MenuLink>
-        </MainMenu>
-      </Sidebar>
-
       <Content>
         <LeftPanel>
           <MenuItem>Atualizar / Verificar seu perfil</MenuItem>
