@@ -89,7 +89,7 @@ function Cadastro(){
       <Body>
           <Content>
               <Info>
-                  <Img src="https://github.com/pfFabio/images/blob/main/IMG-20250402-WA0065__1_-removebg-preview.png?raw=true" alt="Imagem professor"/>
+                  <Img src="/cadastroempresa.png" alt="Imagem professor"/>
                   <P>“Encontramos o melhor candidato para <b>melhor vaga, para melhor empresa!”</b></P>
               </Info>
               <FormContainer>

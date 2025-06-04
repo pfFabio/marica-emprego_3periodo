@@ -78,7 +78,7 @@ function CadastroEmpresa(){
       <Container>
         <Content>
           <Info>
-              <Illustration src="https://github.com/pfFabio/images/blob/main/Imagem_do_WhatsApp_de_2025-04-02_%C3%A0_s__11.17.51_2e1b4da6-removebg-preview.png?raw=true" alt="Enfermeira"/>
+              <Illustration src="/cadastrocandidato.png" alt="Enfermeira"/>
               <Quote>
                   "Esta é a sua oportunidade de dar o <b>próximo passo</b> na sua carreira!"
               </Quote>

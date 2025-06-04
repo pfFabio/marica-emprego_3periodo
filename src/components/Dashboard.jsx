@@ -8,35 +8,6 @@ const Container = styled.div`
   background-color: #f4f5f7;
 `;
 
-const MainMenu = styled.nav`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-  width: 100%;
-`;
-
-const MenuLink = styled.a`
-  color: #1d2951;
-  text-decoration: none;
-  font-weight: bold;
-  background-color: transparent;
-  width: 100%;
-  text-align: center;
-  padding: 12px 0;
-  position: relative;
-
-  &:nth-of-type(1)::after,
-  &:nth-of-type(2)::after {
-    content: "";
-    display: block;
-    height: 2px;
-    background-color: #f9e688;
-    margin: 5px auto 0;
-    width: 70%;
-  }
-`;
-
 const Content = styled.div`
   display: flex;
   flex: 1;

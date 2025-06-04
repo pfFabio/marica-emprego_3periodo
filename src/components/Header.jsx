@@ -191,8 +191,8 @@ function Header({toggleTheme, escuro}) {
 
       <Logo abriu = {taAberto}
         src= {taAberto ? 
-            'https://github.com/pfFabio/images/blob/main/logo%20M+E.png?raw=true'
-          :'https://raw.githubusercontent.com/wicsalgado/marica-mais-emprego/refs/heads/main/img/ME%2B.png' }
+            '/logo M+E.png'
+          :'/ME+.png' }
       >
       </Logo>
         
