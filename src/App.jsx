@@ -11,6 +11,7 @@ import FeedCandidato from "./components/FeedCandidato";
 import FeedEmpresa from "./components/FeedEmpresa";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
+import AcompanharVagas from "./components/AcompanharVagas";
 import PerfilEmpresa from "./components/PerfilEmpresa";
 import CadastrarVaga from "./components/CadastrarVaga";
 import PerfilCandidato from "./components/PerfilCandidato";
@@ -39,6 +40,7 @@ function App() {
               <Route path="/feedempresa" element={<FeedEmpresa />} />
               <Route path="/login" element={<Login />} />
               <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/acompanharvagas" element={<AcompanharVagas />} />
             </Routes>
 
             <Footer/>
