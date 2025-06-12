@@ -11,13 +11,13 @@ const Div = styled.div`
   flex-direction: column;
   justify-content: center;
   padding-left: 4rem;
-  width: 84rem;
+  width: 94%;
 
 `
 
 const Container = styled.div`
   display: flex;
-  width: 50rem;
+  width: 100%;
 
 `
 
@@ -72,7 +72,7 @@ const Empresas = styled.div`
   display: flex;
   justify-content: center;
   font-family: "Montserrat";
-  font-size:2.5rem;
+  font-size: 2.5rem;
   font-weight: bold;
   padding-top: 1rem;
   color:  ${({ theme }) => theme.background}
@@ -81,15 +81,14 @@ const Empresas = styled.div`
 
 const ImgsEmpresas = styled.div`
   display: flex;
+  align-items: center;
   gap: 4rem;
   padding-left: 9rem;
   padding-top: 5rem;
   padding-bottom: 6rem;
 `;
 
-const Img = styled.img`
 
-`
 
 
 function Main() {
@@ -97,7 +96,7 @@ function Main() {
     <Div>
       <section>
           <Container>
-            <img src="https://github.com/EmanuelAvgerino/marica-mais-emprego-/blob/main/img/fundo.png?raw=true" alt="imagemPrincipal" width='100%'/>
+            <img src="https://github.com/EmanuelAvgerino/marica-mais-emprego-/blob/main/img/fundo.png?raw=true" alt="imagemPrincipal" width={"100%"}/>
           </Container>
 
           <Texto>
@@ -128,13 +127,13 @@ function Main() {
         <ImgsEmpresas>
         
           <a href="https://www.marica.rj.gov.br/servicos-sine/">
-            <Img src="https://github.com/EmanuelAvgerino/marica-mais-emprego-/blob/main/img/sinelogo.png?raw=true" alt="logosine" width="220rem" />
+            <img src="https://github.com/EmanuelAvgerino/marica-mais-emprego-/blob/main/img/sinelogo.png?raw=true" alt="logosine" width={"100%"} />
           </a>
           <a href='https://univassouras.edu.br/campus-marica/'>
-            <Img src="https://github.com/EmanuelAvgerino/marica-mais-emprego-/blob/main/img/univassouras2.png?raw=true" alt="logounivassouras" width="450rem" />
+            <img src="https://github.com/EmanuelAvgerino/marica-mais-emprego-/blob/main/img/univassouras2.png?raw=true" alt="logounivassouras" width="100%" />
           </a>
           <a href='https://www.marica.rj.gov.br/'>
-            <Img src="https://github.com/EmanuelAvgerino/marica-mais-emprego-/blob/main/img/marica.png?raw=true" alt="logomarica" width="220rem" />
+            <img src="https://github.com/EmanuelAvgerino/marica-mais-emprego-/blob/main/img/marica.png?raw=true" alt="logomarica" width="100%" />
           </a>
         </ImgsEmpresas>
       </section>
