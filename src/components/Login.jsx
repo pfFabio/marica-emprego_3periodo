@@ -16,7 +16,7 @@ display: flex;
 width: 40rem;
 height: 30rem;
 border-radius: 2rem;
-background-color: white;
+background-color: ${({ theme }) => theme.backgroundHeader};
 `
 
 
@@ -52,7 +52,14 @@ display: flex;
 width: 28rem;
 margin: 1rem;
 justify-content: start;
+
 `
+
+const A = styled.a`
+text-decoration: none;
+color: ${({ theme }) => theme.primary};
+`
+
 
 const Enviar = styled.button`
 margin-top: 2rem;
@@ -92,7 +99,7 @@ function Login(){
                         <input type="checkbox" name="lembrar"/>
                         Lembre-se de mim
                     </Lembrar>
-                        <a href="/">Esqueci minha senha </a>
+                        <A href="/">Esqueci minha senha </A>
                     <Enviar type="submit">enviar</Enviar>
                 </Form>
             </Container>
