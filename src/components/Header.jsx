@@ -45,6 +45,7 @@ const BotaoPerfil = styled.div`
 
 const Cabeca = styled.header`
   position: fixed;
+  top: 0;
   left: 0;
   z-index: 100;
   width: ${({ abriu }) => (abriu ? "2rem" : "8.5rem")}; 
@@ -189,12 +190,11 @@ function Header({toggleTheme, escuro}) {
     return (
     <Cabeca abriu = {taAberto}>
 
-      <Logo abriu = {taAberto}
-        src= {taAberto ? 
-            '/logo M+E.png'
-          :'/ME+.png' }
-      >
-      </Logo>
+      <Logo 
+        abriu = {taAberto}
+        src= {taAberto ? '/logo M+E.png' :'/ME+.png' }
+      />
+
         
       <StyledLink  to="/perfilempresa">
         <BotaoPerfil>
