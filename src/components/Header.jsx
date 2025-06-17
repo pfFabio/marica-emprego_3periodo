@@ -192,7 +192,7 @@ function Header({toggleTheme, escuro}) {
 
       <Logo 
         abriu = {taAberto}
-        src= {taAberto ? '/logo M+E.png' :'/ME+.png' }
+        src= {taAberto ? (escuro ? '/logo M+E.png' : "ME+.png") :'/LOGO PROJETO.png' }
       />
 
         
