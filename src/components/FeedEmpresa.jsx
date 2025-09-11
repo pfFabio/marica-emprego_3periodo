@@ -137,9 +137,44 @@ const BotaoRejeitar = styled.button`
 `
 
 
+const ModalOverlay = styled.div`
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+`;
+
+const ModalCard = styled.div`
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    min-width: 320px;
+    max-width: 90vw;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+`;
+
+const ModalClose = styled.button`
+    align-self: flex-end;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #432a7e;
+    cursor: pointer;
+`;
+
+
+
 
 function FeedEmpresa(){
     const[candidatos, setCandidatos] = useState([])
+    const[busca, setBusca] = useState("");
+    const[modalCandidato, setModalCandidato] = useState(null);
     
     useEffect(() =>{
         fetch('/candidatos.json')
@@ -147,34 +182,59 @@ function FeedEmpresa(){
             .then(data => setCandidatos(data))
     }, []);
 
+    const candidatosFiltrados = candidatos.filter(candidato =>
+        Array.isArray(candidato.vagas) &&
+        candidato.vagas.some(vaga => vaga.toLowerCase().includes(busca.toLowerCase()))
+    );
+
     return(
         <Body>
         
             <ConteudoPrincipal>
                 <CaixaPesquisa>
-                    <Input type="text" placeholder="Digite o tipo de candidato que está buscando"/>
+                    <Input id="BuscaVaga" type="text" placeholder="Digite a vaga que deseja preencher" 
+                        value={busca}
+                        onChange={e => setBusca(e.target.value)}/>
                 </CaixaPesquisa>
 
                 <ContainerCartoes>
-                    {candidatos.map(candidato =>(
-                
-                    <Cartao key = {candidato.id}>
-                        <CabecalhoCartao>
-                            <Avatar>{candidato.avatar}</Avatar>
-                            <div>
-                                <h3>{candidato.nome}</h3>
-                                <small>{candidato.vaga}</small>
-                            </div>
-                        </CabecalhoCartao>
-                        <p>{candidato.descricao}</p>
-                        <BotaoLink href="#" >Ver Perfil</BotaoLink>
-                        <BotoesCartao>
-                            <BotaoRejeitar>Rejeitar</BotaoRejeitar>
-                            <BotaoAprovar>Aprovar</BotaoAprovar>
-                        </BotoesCartao>
-                    </Cartao>
+                    {candidatosFiltrados.map(candidato =>(
+                        <Cartao key = {candidato.id}>
+                            <CabecalhoCartao>
+                                <Avatar>{candidato.avatar}</Avatar>
+                                <div>
+                                    <h3>{candidato.nome}</h3>
+                                    <small>{candidato.vagas}</small>
+                                </div>
+                            </CabecalhoCartao>
+                            <p>{candidato.descricao}</p>
+                            <BotaoLink onClick={e => {e.preventDefault(); setModalCandidato(candidato);}} >Ver Perfil</BotaoLink>
+                            <BotoesCartao>
+                                <BotaoRejeitar>Rejeitar</BotaoRejeitar>
+                                <BotaoAprovar>Aprovar</BotaoAprovar>
+                            </BotoesCartao>
+                        </Cartao>
                     ))}
                 </ContainerCartoes>
+
+                {modalCandidato && (
+                    <ModalOverlay onClick={() => setModalCandidato(null)}>
+                        <ModalCard onClick={e => e.stopPropagation()}>
+                            <ModalClose onClick={() => setModalCandidato(null)} title="Fechar">&times;</ModalClose>
+                            <CabecalhoCartao>
+                                <Avatar>{modalCandidato.avatar}</Avatar>
+                                <div>
+                                    <h3>{modalCandidato.nome}</h3>
+                                    <small>{Array.isArray(modalCandidato.vagas) ? modalCandidato.vagas.join(", ") : modalCandidato.vagas}</small>
+                                </div>
+                            </CabecalhoCartao>
+                            <p><strong>Descrição:</strong> {modalCandidato.descricao}</p>
+                            <p><strong>Competências:</strong> {modalCandidato.competencias && modalCandidato.competencias.join(", ")}</p>
+                            <p><strong>Telefone:</strong> {modalCandidato.telefone}</p>
+                            <p><strong>Endereço:</strong> {modalCandidato.endereco}</p>
+                        </ModalCard>
+                    </ModalOverlay>
+                )}
                 
             </ConteudoPrincipal>
         </Body>
