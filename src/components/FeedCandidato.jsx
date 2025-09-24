@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {useState, useEffect} from 'react'
 
 const Body = styled.div`
     padding-left: 9rem;
@@ -110,11 +111,28 @@ const Btn = styled.a`
 
 
 function FeedCandidato(){
+
+    const[busca, setBusca] = useState("");
+    const[vagas, setVagas] = useState([]);
+
+    useEffect(() =>{
+        fetch('/vagas.json')
+            .then(Response => Response.json())
+            .then(data => setVagas(data))
+    }, []);
+
+    const vagasFiltradas = vagas.filter(vaga =>
+    Array.isArray(vaga.habilidades) &&
+    vaga.habilidades.some(habilidade => habilidade.toLowerCase().includes(busca.toLowerCase()))
+    );
+
     return(
         <Body>
             <Content>
                 <Filters>
-                    <input type="text" placeholder="🔍 Buscar vagas"/>
+                    <input id="BuscaVaga" type="text" placeholder="Digite a sua habilidade principal" 
+                        value={busca}
+                        onChange={e => setBusca(e.target.value)}/>
                     <input type="text" placeholder="📍 Localização"/>
                     <select><option>Carreira</option></select>
                     <select><option>Nível</option></select>
@@ -124,49 +142,19 @@ function FeedCandidato(){
                 </Filters>
 
                 <JobList>
-                    <JobCard>
-                        <JobLogo>#LOGO#<br/>#LOGO#<br/>#LOGO#</JobLogo>
-                        <JobDetails>
-                            <JobTitle>Desenvolvedor Full Stack</JobTitle>
-                            <Company>NextBit Solutions</Company>
-                            <Info>Pleno 🔹 Remoto 🔹 R$6.000,00 - 9.000,00</Info>
-                            <Stack><strong>Stacks</strong> Node.js MongoDB GIT</Stack>
-                        </JobDetails>
-                        <JobAction><Btn href='/'>Ver Vaga</Btn></JobAction>
-                    </JobCard>
+                    {vagasFiltradas.map(vaga => ( 
+                        <JobCard key={vaga.id}>
+                            <JobLogo>{vaga.logo}</JobLogo>
+                            <JobDetails>
+                                <JobTitle>{vaga.titulo}</JobTitle>
+                                <Company>{vaga.empresa}</Company>
+                                <Info>{vaga.nivel} 🔹 {vaga.formato} 🔹 {vaga.faixa_salarial}</Info>
+                                <Stack>{vaga.habilidades.join(", ")}</Stack>
+                            </JobDetails>
+                            <JobAction><Btn href='/'>Ver Vaga</Btn></JobAction>
+                        </JobCard>
+                    ))}
 
-                    <JobCard>
-                        <JobLogo>#LOGO#<br/>#LOGO#<br/>#LOGO#</JobLogo>
-                        <JobDetails>
-                            <JobTitle>Cientista de Dados</JobTitle>
-                            <Company>IronGate Cyber</Company>
-                            <Info>Sênior 🔹 Remoto 🔹 R$8.000,00 - 14.000,00</Info>
-                            <Stack><strong>Stacks</strong> Python NumPy SQL</Stack>
-                        </JobDetails>
-                        <JobAction><Btn href='/'>Ver Vaga</Btn></JobAction>
-                    </JobCard>
-
-                    <JobCard>
-                        <JobLogo>#LOGO#<br/>#LOGO#<br/>#LOGO#</JobLogo>
-                        <JobDetails>
-                            <JobTitle>Analista de Suporte Técnico</JobTitle>
-                            <Company>DevScape</Company>
-                            <Info>Júnior 🔹 Presencial 🔹 R$2.000,00 - 3.500,00</Info>
-                            <Stack><strong>Stacks</strong> Windows AnyDesk Firewall</Stack>
-                        </JobDetails>
-                        <JobAction><Btn href='/'>Ver Vaga</Btn></JobAction>
-                    </JobCard>
-
-                    <JobCard>
-                        <JobLogo>#LOGO#<br/>#LOGO#<br/>#LOGO#</JobLogo>
-                        <JobDetails>
-                            <JobTitle>Desenvolvedor(a) Mobile</JobTitle>
-                            <Company>MobixLabs</Company>
-                            <Info>Sênior 🔹 Híbrido 🔹 R$10.000,00 - 16.000,00</Info>
-                            <Stack><strong>Stacks</strong> Flutter Node.js Google Play Console</Stack>
-                        </JobDetails>
-                        <JobAction><Btn href='/'>Ver Vaga</Btn></JobAction>
-                    </JobCard>
                 </JobList>
             </Content>
         </Body>
