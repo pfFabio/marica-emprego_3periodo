@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "titulo": "Desenvolvedor Full Stack",
+    "empresa": "NextBit Solutions",
+    "nivel": "Pleno",
+    "formato": "Remoto",
+    "faixa_salarial": "R$6.000,00 - 9.000,00",
+    "localizacao": "",
+    "habilidades": ["Node.js", "MongoDB", "GIT"],
+    "carreira": "Desenvolvimento",
+    "logo": "#LOGO#"
+  },
+  {
+    "id": 2,
+    "titulo": "Cientista de Dados",
+    "empresa": "IronGate Cyber",
+    "nivel": "Sênior",
+    "formato": "Remoto",
+    "faixa_salarial": "R$8.000,00 - 14.000,00",
+    "localizacao": "",
+    "habilidades": ["Python", "NumPy", "SQL"],
+    "carreira": "Dados",
+    "logo": "#LOGO#"
+  },
+  {
+    "id": 3,
+    "titulo": "Analista de Suporte Técnico",
+    "empresa": "DevScape",
+    "nivel": "Júnior",
+    "formato": "Presencial",
+    "faixa_salarial": "R$2.000,00 - 3.500,00",
+    "localizacao": "",
+    "habilidades": ["Windows", "AnyDesk", "Firewall"],
+    "carreira": "Suporte",
+    "logo": "#LOGO#"
+  },
+  {
+    "id": 4,
+    "titulo": "Desenvolvedor(a) Mobile",
+    "empresa": "MobixLabs",
+    "nivel": "Sênior",
+    "formato": "Híbrido",
+    "faixa_salarial": "R$10.000,00 - 16.000,00",
+    "localizacao": "",
+    "habilidades": ["Flutter", "Node.js", "Google Play Console"],
+    "carreira": "Mobile",
+    "logo": "#LOGO#"
+  }
+]
